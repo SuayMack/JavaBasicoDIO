@@ -14,5 +14,4 @@ public class Usuario {
     smartTv.diminuirCanal();
     System.out.println("Novo canal ->canal " + smartTv.canal);
   }
-  
 }
