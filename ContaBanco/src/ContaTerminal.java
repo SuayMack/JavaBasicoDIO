@@ -2,27 +2,30 @@ import java.util.Scanner;
 
 public class ContaTerminal {  
 
-  public static void main(String[] args) {
-    Scanner terminal = new Scanner(System.in);
-    System.out.println("Digite seu nome:");
-    String nome = terminal.next();
+  public static void main(String[] args) throws Exception {
+        
+    int number;
+    String agency;
+    String firstName;
+    String lastName;
+    double saldo;
 
-    System.out.println("Digite o número da agência:");
-    String agencia = terminal.next();
+    try (Scanner entrada = new Scanner(System.in)) {
+      System.out.println("Por favor, digite o número da Agência: ");
+      agency = entrada.next();
+      System.out.println("Por favor informe o número da conta: ");
+      number = entrada.nextInt();
+      System.out.println("Por favor informe seu primeiro nome: ");
+      firstName = entrada.next();
+      System.out.println("Por favor informe seu ultimo nome: ");
+      lastName = entrada.next();
+      System.out.println("Por informar valor de deposito: ");
+      saldo = entrada.nextDouble();
+    }
 
-    System.out.println("Digite o número da conta:");
-    int numero = terminal.nextInt();
-
-    System.out.println("Digite o saldo inicial:");
-    Float saldo = terminal.nextFloat();
-
-    System.out.println("Olá " + nome +
-      ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia +
-      ", conta "+ numero +
-      " e seu saldo "+ saldo +" já está disponível para saque")
-    ;
-
-    terminal.close();
+    System.out.println("Olá "+firstName+ lastName+
+    ", obrigado por criar uma conta em nosso banco, sua agência é "
+    +agency+", conta "+number+" e seu saldo R$ "+saldo+" ja esta disponivel para saque.");
 
   }
 }
